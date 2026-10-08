@@ -1,0 +1,25 @@
+
+.row{
+    padding: 10%;
+    background:
+        linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 255, 0, 0) 70.71%);
+    text-align: center;
+}
+header {
+    background: linear-gradient(to right, grey, white) !important;
+}
+footer{
+    background-color: transparent !important;
+}
+img {
+    width : 30% !important;
+    display: flex;
+    align-self: center;
+    margin-top: 1%;
+}
+
+header nav{
+    
+}
