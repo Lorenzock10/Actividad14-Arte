@@ -1,20 +1,42 @@
 /* ===================================================
-   1. FONDO GENERAL Y GRADIENTES DE ESTRUCTURA
+   1. FONDO GENERAL, TIPOGRAFÍA Y ANIMACIÓN
    =================================================== */
 
-body {
-    background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
+@keyframes animarFondoBody {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
 }
+
+body {
+    /* Nueva tipografía aplicada globalmente */
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    
+    /* Gradiente radial expandido para el fondo */
+    background: radial-gradient(circle at center, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+    background-size: 200% 200%;
+    min-height: 100vh;
+    
+    /* Animación del fondo */
+    animation: animarFondoBody 10s infinite alternate ease-in-out;
+}
+
+
+/* ===================================================
+   2. GRADIENTES DE ESTRUCTURA
+   =================================================== */
 
 .header-gradient { 
     background: linear-gradient(to right, #1f1c2c, #928dab); 
 }
 
+/* Sección principal Hero: Se eliminó el borde */
 .hero-section {
     background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
-    border: 2px solid #ffffff;
+    border: none; /* Sin borde */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -49,12 +71,12 @@ body {
     border: none;
     font-weight: 600;
     box-shadow: 0 3px 8px rgba(17, 153, 142, 0.3);
-    overflow: hidden; /* Contiene la mancha dentro del área del botón */
+    overflow: hidden;
 }
 
 
 /* ===================================================
-   2. IMPLEMENTACIÓN DE LAS 5 ANIMACIONES (from / to)
+   3. ANIMACIONES DE COMPONENTES (from / to)
    =================================================== */
 
 /* Animación 1: Aparecer (Hero) */
@@ -132,17 +154,7 @@ body {
 
 
 /* ===================================================
-   3. COLORES ESPECÍFICOS DE PINTURA POR BOTÓN
-   =================================================== */
-.btn-hero   { --color-pintura: #ff8a00; } /* Naranja/Hero */
-.btn-indigo { --color-pintura: #1a237e; } /* Azul Índigo */
-.btn-bordo  { --color-pintura: #800020; } /* Bordó */
-.btn-morado { --color-pintura: #8a2be2; } /* Morado */
-.btn-verde  { --color-pintura: #2e7d32; } /* Verde */
-
-
-/* ===================================================
-   4. ANIMACIÓN DE SALPICADURA EN :active
+   4. SALPICADURA DE PINTURA (SIN VARIABLES)
    =================================================== */
 
 @keyframes salpicar {
@@ -156,7 +168,6 @@ body {
     }
 }
 
-/* Pseudoelemento de mancha que toma el color de la variable --color-pintura */
 .btn-gradient::after {
     content: "";
     position: absolute;
@@ -164,18 +175,18 @@ body {
     left: 50%;
     width: 50px;
     height: 50px;
-    
-    /* Toma dinámicamente el color asignado a cada botón */
-    background-color: var(--color-pintura, #ff0055);
-    
-    /* Bordes irregulares para imitar la mancha */
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(0);
 }
 
-/* Al presionar (:active), salta la pintura del color correspondiente */
+.btn-hero::after   { background-color: #ff8a00; } 
+.btn-indigo::after { background-color: #1a237e; } 
+.btn-bordo::after  { background-color: #800020; } 
+.btn-morado::after { background-color: #8a2be2; } 
+.btn-verde::after  { background-color: #2e7d32; } 
+
 .btn-gradient:active::after {
     animation: salpicar 0.5s ease-out;
 }
