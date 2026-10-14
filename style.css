@@ -1,25 +1,52 @@
 
-.row{
-    padding: 10%;
-    background:
-        linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
-        linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
-        linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 255, 0, 0) 70.71%);
-    text-align: center;
-}
-header {
-    background: linear-gradient(to right, grey, white) !important;
-}
-footer{
-    background-color: transparent !important;
-}
-img {
-    width : 30% !important;
-    display: flex;
-    align-self: center;
-    margin-top: 1%;
+body {
+    background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 60%, black 100%);
+    background-attachment: fixed; /* Mantiene el patrón centrado al hacer scroll */
+    min-height: 100vh;
 }
 
-header nav{
-    
+.header-gradient {
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    border: 2px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.divider-gradient {
+    height: 4px;
+    width: 120px;
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    border-radius: 2px;
+}
+
+.card-radial {
+    background: radial-gradient(circle at center, #ffffff 40%, red 100%);
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.btn-gradient {
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(17, 153, 142, 0.3);
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    color: #ffffff;
+}
+
+.footer-gradient {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }

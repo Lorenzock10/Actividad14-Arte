@@ -1,96 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap demo</title>
+    <title>Pincelazo - Teoría de Gradients</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos Propios -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-  </div>
 
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Pincelazo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Trayectoria</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Proyectos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Hobbies</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- HEADER CON GRADIENTE LINEAL HORIZONTAL -->
+    <header class="header-gradient">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Pincelazo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Trayectoria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Hobbies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="container my-5">
 
-    <main>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="Imagenes/Azul.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Color Indigo</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="Imagenes/bordo.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Color Bordo</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="Imagenes/morado.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Color Morado</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="Imagenes/Verde.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Color Verde</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- 1. SECCIÓN PRINCIPAL CON GRADIENTE DESTACADO (HERO) -->
+        <section class="hero-section text-center p-5 mb-5 rounded-4 text-white">
+            <h1 class="display-4 fw-bold mb-3">Explora el Mundo de los Colores</h1>
+            <p class="lead mb-4">Demostración práctica de degradados lineales, radiales y sus combinaciones en CSS.</p>
+            
+            <!-- Div decorativo con gradiente lineal fino -->
+            <div class="divider-gradient my-4 mx-auto"></div>
+
+            <!-- Botón con gradiente lineal -->
+            <button class="btn btn-lg btn-gradient px-4 py-2">Explorar Proyectos</button>
+        </section>
+
+        <!-- 2. TARJETAS CON GRADIENTE RADIAL -->
+        <section>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                
+                <!-- Tarjeta 1 -->
+                <div class="col">
+                    <div class="card h-100 card-radial shadow-sm">
+                        <img src="Imagenes/Azul.jpg" class="card-img-top mx-auto mt-3" alt="Color Índigo">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Color Índigo</h5>
+                            <p class="card-text">Fondo generado con un degradado radial suave que nace desde el centro.</p>
+                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="col">
+                    <div class="card h-100 card-radial shadow-sm">
+                        <img src="Imagenes/bordo.jpg" class="card-img-top mx-auto mt-3" alt="Color Bordó">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Color Bordó</h5>
+                            <p class="card-text">Combinación de border estático, sombra y degradado radial interno.</p>
+                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="col">
+                    <div class="card h-100 card-radial shadow-sm">
+                        <img src="Imagenes/morado.jpg" class="card-img-top mx-auto mt-3" alt="Color Morado">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Color Morado</h5>
+                            <p class="card-text">Demostración de maquetación en grilla de Bootstrap.</p>
+                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="col">
+                    <div class="card h-100 card-radial shadow-sm">
+                        <img src="Imagenes/Verde.jpg" class="card-img-top mx-auto mt-3" alt="Color Verde">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Color Verde</h5>
+                            <p class="card-text">Estructura simple pensada para comprender la sintaxis en CSS.</p>
+                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-
-    <footer>
-        
-            
-
+    <!-- FOOTER CON GRADIENTE -->
+    <footer class="footer-gradient text-center py-4 mt-5">
+        <p class="mb-0 text-white">&copy; 2026 Pincelazo - Ejercicio de CSS Gradients</p>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
