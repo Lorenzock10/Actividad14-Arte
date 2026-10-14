@@ -1,12 +1,15 @@
+/* ===================================================
+   1. FONDO GENERAL Y GRADIENTES DE ESTRUCTURA
+   =================================================== */
 
 body {
-    background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 60%, black 100%);
-    background-attachment: fixed; /* Mantiene el patrón centrado al hacer scroll */
+    background: radial-gradient(circle at center, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
-.header-gradient {
-    background: linear-gradient(to right, #1f1c2c, #928dab);
+.header-gradient { 
+    background: linear-gradient(to right, #1f1c2c, #928dab); 
 }
 
 .hero-section {
@@ -23,30 +26,156 @@ body {
 }
 
 .card-radial {
-    background: radial-gradient(circle at center, #ffffff 40%, red 100%);
+    background: radial-gradient(circle at center, #ffffff 40%, #f1f5f9 100%);
     border: 1px solid #cbd5e1;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.card-img-top {
-    width: 35%;
-    height: auto;
-    border-radius: 8px;
+.card-img-top { 
+    width: 35%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+
+.footer-gradient { 
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); 
 }
 
 .btn-gradient {
-    background: linear-gradient(to right, #11998e, #38ef7d);
+    position: relative;
+    background: linear-gradient(90deg, #11998e, #38ef7d, #11998e);
+    background-size: 200% 100%;
     color: #ffffff;
     border: none;
     font-weight: 600;
     box-shadow: 0 3px 8px rgba(17, 153, 142, 0.3);
+    overflow: hidden; /* Contiene la mancha dentro del área del botón */
 }
 
-.btn-gradient:hover {
-    background: linear-gradient(to right, #38ef7d, #11998e);
-    color: #ffffff;
+
+/* ===================================================
+   2. IMPLEMENTACIÓN DE LAS 5 ANIMACIONES (from / to)
+   =================================================== */
+
+/* Animación 1: Aparecer (Hero) */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.footer-gradient {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+.anim-hero {
+    animation: aparecer 2s;
+}
+
+/* Animación 2: Deslizar (Logo Header) */
+@keyframes deslizarAbajo {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim-logo {
+    display: inline-block;
+    animation: deslizarAbajo 1.5s;
+}
+
+/* Animación 3: Expandir (Barra decorativa) */
+@keyframes expandir {
+    from {
+        width: 80px;
+    }
+    to {
+        width: 200px;
+    }
+}
+
+.anim-divisor {
+    animation: expandir 2s infinite alternate;
+}
+
+/* Animación 4: Flotar (Imágenes de tarjetas) */
+@keyframes flotar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.anim-imagen {
+    animation: flotar 2.5s infinite alternate ease-in-out;
+}
+
+/* Animación 5: Mover fondo del botón */
+@keyframes moverFondo {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+.anim-boton {
+    animation: moverFondo 3s infinite linear;
+}
+
+
+/* ===================================================
+   3. COLORES ESPECÍFICOS DE PINTURA POR BOTÓN
+   =================================================== */
+.btn-hero   { --color-pintura: #ff8a00; } /* Naranja/Hero */
+.btn-indigo { --color-pintura: #1a237e; } /* Azul Índigo */
+.btn-bordo  { --color-pintura: #800020; } /* Bordó */
+.btn-morado { --color-pintura: #8a2be2; } /* Morado */
+.btn-verde  { --color-pintura: #2e7d32; } /* Verde */
+
+
+/* ===================================================
+   4. ANIMACIÓN DE SALPICADURA EN :active
+   =================================================== */
+
+@keyframes salpicar {
+    from {
+        transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(3.5) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Pseudoelemento de mancha que toma el color de la variable --color-pintura */
+.btn-gradient::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    
+    /* Toma dinámicamente el color asignado a cada botón */
+    background-color: var(--color-pintura, #ff0055);
+    
+    /* Bordes irregulares para imitar la mancha */
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Al presionar (:active), salta la pintura del color correspondiente */
+.btn-gradient:active::after {
+    animation: salpicar 0.5s ease-out;
 }

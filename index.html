@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pincelazo - Teoría de Gradients</title>
+    <title>Pincelazo - Animaciones CSS</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,11 +12,11 @@
 </head>
 <body>
 
-    <!-- HEADER CON GRADIENTE LINEAL HORIZONTAL -->
+    <!-- HEADER -->
     <header class="header-gradient">
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#">Pincelazo</a>
+                <a class="navbar-brand fw-bold anim-logo" href="#">Pincelazo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,66 +36,63 @@
     <!-- CONTENEDOR PRINCIPAL -->
     <main class="container my-5">
 
-        <!-- 1. SECCIÓN PRINCIPAL CON GRADIENTE DESTACADO (HERO) -->
-        <section class="hero-section text-center p-5 mb-5 rounded-4 text-white">
+        <!-- SECCIÓN HERO -->
+        <section class="hero-section text-center p-5 mb-5 rounded-4 text-white anim-hero">
             <h1 class="display-4 fw-bold mb-3">Explora el Mundo de los Colores</h1>
-            <p class="lead mb-4">Demostración práctica de degradados lineales, radiales y sus combinaciones en CSS.</p>
+            <p class="lead mb-4">¡Presiona cada botón para hacer saltar la pintura de su propio color!</p>
+            <div class="divider-gradient my-4 mx-auto anim-divisor"></div>
             
-            <!-- Div decorativo con gradiente lineal fino -->
-            <div class="divider-gradient my-4 mx-auto"></div>
-
-            <!-- Botón con gradiente lineal -->
-            <button class="btn btn-lg btn-gradient px-4 py-2">Explorar Proyectos</button>
+            <button class="btn btn-lg btn-gradient px-4 py-2 anim-boton btn-hero">Explorar Proyectos</button>
         </section>
 
-        <!-- 2. TARJETAS CON GRADIENTE RADIAL -->
+        <!-- SECCIÓN DE TARJETAS -->
         <section>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 
-                <!-- Tarjeta 1 -->
+                <!-- Tarjeta 1 (Índigo) -->
                 <div class="col">
                     <div class="card h-100 card-radial shadow-sm">
-                        <img src="Imagenes/Azul.jpg" class="card-img-top mx-auto mt-3" alt="Color Índigo">
+                        <img src="Imagenes/Azul.jpg" class="card-img-top mx-auto mt-3 anim-imagen" alt="Color Índigo">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Color Índigo</h5>
-                            <p class="card-text">Fondo generado con un degradado radial suave que nace desde el centro.</p>
-                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                            <p class="card-text">Haz clic en el botón para salpicar pintura azul índigo.</p>
+                            <button class="btn btn-sm btn-gradient mt-2 anim-boton btn-indigo">Ver más</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta 2 -->
+                <!-- Tarjeta 2 (Bordó) -->
                 <div class="col">
                     <div class="card h-100 card-radial shadow-sm">
-                        <img src="Imagenes/bordo.jpg" class="card-img-top mx-auto mt-3" alt="Color Bordó">
+                        <img src="Imagenes/bordo.jpg" class="card-img-top mx-auto mt-3 anim-imagen" alt="Color Bordó">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Color Bordó</h5>
-                            <p class="card-text">Combinación de border estático, sombra y degradado radial interno.</p>
-                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                            <p class="card-text">Haz clic en el botón para salpicar pintura color bordó.</p>
+                            <button class="btn btn-sm btn-gradient mt-2 anim-boton btn-bordo">Ver más</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta 3 -->
+                <!-- Tarjeta 3 (Morado) -->
                 <div class="col">
                     <div class="card h-100 card-radial shadow-sm">
-                        <img src="Imagenes/morado.jpg" class="card-img-top mx-auto mt-3" alt="Color Morado">
+                        <img src="Imagenes/morado.jpg" class="card-img-top mx-auto mt-3 anim-imagen" alt="Color Morado">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Color Morado</h5>
-                            <p class="card-text">Demostración de maquetación en grilla de Bootstrap.</p>
-                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                            <p class="card-text">Haz clic en el botón para salpicar pintura morada.</p>
+                            <button class="btn btn-sm btn-gradient mt-2 anim-boton btn-morado">Ver más</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta 4 -->
+                <!-- Tarjeta 4 (Verde) -->
                 <div class="col">
                     <div class="card h-100 card-radial shadow-sm">
-                        <img src="Imagenes/Verde.jpg" class="card-img-top mx-auto mt-3" alt="Color Verde">
+                        <img src="Imagenes/Verde.jpg" class="card-img-top mx-auto mt-3 anim-imagen" alt="Color Verde">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Color Verde</h5>
-                            <p class="card-text">Estructura simple pensada para comprender la sintaxis en CSS.</p>
-                            <button class="btn btn-sm btn-gradient mt-2">Ver más</button>
+                            <p class="card-text">Haz clic en el botón para salpicar pintura verde.</p>
+                            <button class="btn btn-sm btn-gradient mt-2 anim-boton btn-verde">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -105,9 +102,9 @@
 
     </main>
 
-    <!-- FOOTER CON GRADIENTE -->
+    <!-- FOOTER -->
     <footer class="footer-gradient text-center py-4 mt-5">
-        <p class="mb-0 text-white">&copy; 2026 Pincelazo - Ejercicio de CSS Gradients</p>
+        <p class="mb-0 text-white">&copy; 2026 Pincelazo - Ejercicio de Animaciones CSS</p>
     </footer>
 
     <!-- Bootstrap JS -->
